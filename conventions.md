@@ -44,7 +44,40 @@ Align name, type, and constraints in columns. Uppercase keywords, `TRUE`, `FALSE
 
 ## Files and workflow
 
-- One schema per project, named for the project, never `public`. `schema.sql`: `\set ON_ERROR_STOP on`, `CREATE SCHEMA`, `SET search_path`, `raise_exception()` (a trigger function which raises `TG_ARGV[0]`), then `\ir` each file in dependency order. A superuser applies `extensions.sql` first.
+```sql
+\set ON_ERROR_STOP on
+
+CREATE SCHEMA rgp;
+SET search_path TO rgp;
+
+CREATE OR REPLACE FUNCTION raise_exception() RETURNS trigger AS $$
+DECLARE
+	message text;
+BEGIN
+	message := TG_ARGV[0];
+	RAISE EXCEPTION '%', message;
+END;
+$$ LANGUAGE plpgsql;
+
+-- A superuser should apply extensions.sql first
+
+\ir users.sql
+\ir sessions.sql
+\ir locations.sql
+\ir positions.sql
+\ir plants.sql
+\ir accessions.sql
+\ir plant_accessions.sql
+\ir goods.sql
+\ir inventory.sql
+\ir orders.sql
+\ir store_scions.sql
+\ir paypal.sql
+\ir easypost.sql
+\ir website_properties.sql
+```
+
+- One schema per project, named for the project, never `public`. `schema.sql` as above: `raise_exception()` for the triggers, then `\ir` each file in dependency order.
 - One file per concept: the table, its companions, triggers, views, immvs. Views joining many files load last from their own file.
 - Fixtures which are part of the model live in the schema file, such as `\copy` of reference data. Known configuration goes in a fixture row, not a DEFAULT. A DEFAULT is the justified ordinary case, never an observation nobody made.
 - No migration files. The schema files describe a fresh install and are the truth; production is ALTERed by hand to match, then the CREATE TABLE is edited. Write statements which paste into production psql unchanged: `CREATE INDEX CONCURRENTLY` on big tables, `CREATE OR REPLACE` for views and functions.
