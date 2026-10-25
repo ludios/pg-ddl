@@ -3,8 +3,6 @@
 
 # House PostgreSQL DDL conventions
 
-Reference for SKILL.md. Each rule here settles a choice which the modeling in SKILL.md leaves open.
-
 ## Shape of a table
 
 ```sql
