@@ -127,7 +127,7 @@ The two `periods` calls above go right after CREATE TABLE on tables people edit,
 
 - `t_view` LEFT JOINs the table to everything a reader wants in one round trip, joined columns prefixed by role (`plant_`, `accession_`). An INSTEAD OF UPDATE trigger lets an admin UI edit through it.
 - `pgivm.create_immv` for aggregates which must be current and fast. When ivm can't (window functions), a trigger-maintained table, commented as updated only by that trigger.
-- Reporting views for the business owner and integrity views for the operator live in the schema. Ad-hoc investigations are saved as `.sql` files beside it.
+- Reporting views for the business owner and integrity views for the operator live in the schema.
 
 ## Indexes and storage
 
