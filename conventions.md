@@ -1,7 +1,7 @@
 <!-- Model-output: Claude Mythos 5.1 -->
 <!-- Model-output: ChatGPT 6 Astra -->
 
-# House PostgreSQL DDL conventions
+# Use these PostgreSQL DDL conventions
 
 ## Shape of a table
 
