@@ -72,16 +72,16 @@ Once records and consumers depend on the model's meanings, preserve those meanin
 
 ## References
 
-- William Kent, *Data and Reality* (1978): §1.1 "One Thing", §1.2 "How Many Things Is It?", §1.3 "Change", and §1.5 "Categories (What Is It?)". See also ch. 2 §2.4 on existence tests, ch. 3 on naming (including §3.9 "Sameness"), and §5.2 "Attribute vs. Relationship" and §5.3 "Are Attributes Entities?". "Data models are tools. They do not contain in themselves the 'true' structure of information." Excerpts at bkent.net/Doc/darxrp.htm.
-- Kent, "The Many Forms of a Single Fact" (1989), bkent.net/Doc/manyform.htm, and "Choices in Practical Data Design" (VLDB 1982): even the set of data elements is a design choice.
-- Terry Halpin, "Object-Role Modeling: An Overview", orm.net/pdf/ORMwhitePaper.pdf: the conceptual schema design procedure. Use the verbalization and population checks without adopting the tooling.
-- Graeme Simsion, Simon Milton, Graeme Shanks, "Data modeling: Description or design?", *Information & Management* 49 (2012), and Simsion, *Data Modeling: Theory and Practice* (2007).
-- E. F. Codd, "Extending the Database Relational Model to Capture More Meaning" (1979), §6: kernel, characteristic, associative. Use the questions without adopting the surrogate machinery.
-- C. J. Date and Hugh Darwen, *The Third Manifesto*, 3rd ed., ch. 2: relvar predicates and constraints. Its ban on nulls does not apply here. Incomplete observations are nullable.
-- Christian Jensen and Richard Snodgrass, "Semantics of Time-Varying Information" (1996), §2: valid time versus transaction time. Use this distinction without requiring a bitemporal architecture for every table.
-- Martin Fowler, *Analysis Patterns* (1997), ch. 3: Quantity, Observation, Dual Time Record. See also the bliki entry "Contradictory Observations".
-- Joe Celko, "A Tale of Identifiers" (Simple Talk, 2011): validation versus verification of a key. Use the verification test without adopting the ban on generated ids.
-- Rich Hickey, "The Value of Values" (2012): facts are values with a time. This does not require append-only storage. rgp edits stock and descriptions in place.
-- Barry Smith et al., *Basic Formal Ontology 2.0* (2015), §2.13: continuants versus occurrents, as a diagnostic only.
+- William Kent, [*Data and Reality*](https://archive.org/details/datarealitybasic0000kent) (1978; [3rd ed.](https://technicspub.com/data-and-reality/), 2012): §1.1 "One Thing", §1.2 "How Many Things Is It?", §1.3 "Change", and §1.5 "Categories (What Is It?)". See also ch. 2 §2.4 on existence tests, ch. 3 on naming (including §3.9 "Sameness"), and §5.2 "Attribute vs. Relationship" and §5.3 "Are Attributes Entities?". "Data models are tools. They do not contain in themselves the 'true' structure of information." [Excerpts at bkent.net](https://www.bkent.net/Doc/darxrp.htm).
+- Kent, ["The Many Forms of a Single Fact"](https://www.bkent.net/Doc/manyform.htm) (1989) and ["Choices in Practical Data Design"](https://www.vldb.org/conf/1982/P165.PDF) (VLDB 1982): even the set of data elements is a design choice.
+- Terry Halpin, ["Object-Role Modeling: An Overview"](https://www.orm.net/pdf/ORMwhitePaper.pdf): the conceptual schema design procedure. Use the verbalization and population checks without adopting the tooling.
+- Graeme Simsion, Simon Milton, Graeme Shanks, ["Data modeling: Description or design?"](https://doi.org/10.1016/j.im.2012.01.003), *Information & Management* 49 (2012), and Simsion, [*Data Modeling: Theory and Practice*](https://technicspub.com/data-modeling-theory-and-practice/) (2007).
+- E. F. Codd, ["Extending the Database Relational Model to Capture More Meaning"](https://doi.org/10.1145/320107.320109) (1979; [scan](https://gertjans.home.xs4all.nl/usenet/microsoft.public.sqlserver.programming/codd1979.pdf)), §6: kernel, characteristic, associative. Use the questions without adopting the surrogate machinery.
+- C. J. Date and Hugh Darwen, [*The Third Manifesto*](https://www.dcs.warwick.ac.uk/~hugh/TTM/DTATRM.pdf), 3rd ed., ch. 2: relvar predicates and constraints. Its ban on nulls does not apply here. Incomplete observations are nullable.
+- Christian Jensen and Richard Snodgrass, ["Semantics of Time-Varying Information"](https://www2.cs.arizona.edu/~rts/pubs/ISJune96.pdf) (1996), §2: valid time versus transaction time. Use this distinction without requiring a bitemporal architecture for every table.
+- Martin Fowler, [*Analysis Patterns*](https://martinfowler.com/books/ap.html) (1997), ch. 3: Quantity, Observation, Dual Time Record. See also the bliki entry ["Contradictory Observations"](https://martinfowler.com/bliki/ContradictoryObservations.html).
+- Joe Celko, ["A Tale of Identifiers"](https://www.red-gate.com/simple-talk/databases/sql-server/t-sql-programming-sql-server/a-tale-of-identifiers/) (Simple Talk, 2011): validation versus verification of a key. Use the verification test without adopting the ban on generated ids.
+- Rich Hickey, ["The Value of Values"](https://www.infoq.com/presentations/Value-Values/) (2012): facts are values with a time. This does not require append-only storage. rgp edits stock and descriptions in place.
+- Barry Smith et al., [*Basic Formal Ontology 2.0*](https://github.com/BFO-ontology/BFO/raw/master/docs/bfo2-reference/BFO2-Reference.pdf) (2015), §2.13: continuants versus occurrents, as a diagnostic only.
 
 Once the model is ready, write the DDL using conventions.md.
