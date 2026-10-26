@@ -1,7 +1,7 @@
 <!-- Model-output: Claude Mythos 5.1 -->
 <!-- Model-output: ChatGPT 6 Astra -->
 
-# Use these PostgreSQL DDL conventions
+# Write PostgreSQL DDL like this
 
 ## Shape of a table
 
